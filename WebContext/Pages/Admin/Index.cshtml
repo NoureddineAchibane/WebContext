@@ -1,0 +1,46 @@
+﻿@page
+@model WebContext.Pages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+    <a asp-page="Logout">Logout</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Etudiant[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Etudiant[0].Prenom)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Etudiant) {
+        <tr>
+             <td>
+                @Html.DisplayFor(modelItem => item.EtudiantId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prenom)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.EtudiantId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.EtudiantId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.EtudiantId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

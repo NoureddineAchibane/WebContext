@@ -1,0 +1,28 @@
+﻿@page
+@model WebContext.Pages.LoginModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="row">
+    <p> <strong>@Model.message</strong> </p>
+    <div class="col-md-4">
+        <form method="post">
+            
+            <div class="form-group">
+                <label  class="control-label">Name</label>
+                <input name="Nom" class="form-control" />
+               
+            </div>
+            <div class="form-group">
+                <label class="control-label">Password</label>
+                <input type="password" name="Password" class="form-control" />
+        
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
